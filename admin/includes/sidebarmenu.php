@@ -42,13 +42,56 @@
 								
 										  </ul>
 										</li>
+									  <li id="menu-academico" ><a href="#"><i class="fa fa-finance-ul" aria-hidden="true"></i><span>财务</span> <span class="fa fa-angle-right" style="float: right"></span><div class="clearfix"></div></a>
+										   <ul id="menu-academico-sub" >
+										    <li id="menu-academico-avaliacoes" ><a href="create-package.php">财务中心</a></li>
+											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">分销商账目</a></li>
+											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">给分销商充值</a></li>
+											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">分销商流水账</a></li>
+											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">分销商透支额度</a></li>
+											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">供应商账目</a></li>
+											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">供应商订单结算</a></li>
+											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">供应商流水账</a></li>
+											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">财务日志</a></li>
+								
+										  </ul>
+										</li>
+										
+									  <li id="menu-academico" ><a href="#"><i class="fa fa-user-ul" aria-hidden="true"></i><span>用户</span> <span class="fa fa-angle-right" style="float: right"></span><div class="clearfix"></div></a>
+										   <ul id="menu-academico-sub" >
+										    <li id="menu-academico-avaliacoes" ><a href="create-package.php">用户管理</a></li>
+											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">分销商管理</a></li>
+											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">供应商管理</a></li>
+											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">添加分销商账户</a></li>
+											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">添加供应商账户</a></li>
+											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">管理组设置</a></li>
+											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">管理员列表</a></li>
+								
+										  </ul>
+										</li>
+									   <li id="menu-academico" ><a href="#"><i class="fa fa-user-ul" aria-hidden="true"></i><span>综合</span> <span class="fa fa-angle-right" style="float: right"></span><div class="clearfix"></div></a>
+										   <ul id="menu-academico-sub" >
+										    <li id="menu-academico-avaliacoes" ><a href="create-package.php">综合应用</a></li>
+											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">旅游顾问</a></li>
+											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">旅游管理</a></li>
+											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">电子合同</a></li>
+											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">纸质合同</a></li>
+											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">发票管理</a></li>
+											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">护照管理</a></li>
+											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">公告管理</a></li>
+											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">资源文档</a></li>
+								
+										  </ul>
+										</li>
+										
+									   
 									
-									//<li id="menu-academico" ><a href="manage-users.php"><i class="fa fa-users" aria-hidden="true"></i><span>管理用户</span><div class="clearfix"></div></a></li> 
+									/*<li id="menu-academico" ><a href="manage-users.php"><i class="fa fa-users" aria-hidden="true"></i><span>管理用户</span><div class="clearfix"></div></a></li> 
 									
 									<li><a href="manage-bookings.php"><i class="fa fa-list" aria-hidden="true"></i>  <span>管理预定</span><div class="clearfix"></div></a></li>
 									 <li><a href="manageissues.php"><i class="fa fa-table"></i>  <span>管理问题</span><div class="clearfix"></div></a></li>
 									<li><a href="manage-enquires.php"><i class="fa fa-file-text-o" aria-hidden="true"></i>  <span>管理咨询</span><div class="clearfix"></div></a></li>
-									<li><a href="manage-pages.php"><i class="fa fa-file-text-o" aria-hidden="true"></i>  <span>管理页面</span><div class="clearfix"></div></a></li>
+									<li><a href="manage-pages.php"><i class="fa fa-file-text-o" aria-hidden="true"></i>  <span>管理页面</span><div class="clearfix"></div></a></li>*/
 							     
 									
 								  </ul>
