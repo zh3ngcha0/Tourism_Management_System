@@ -74,23 +74,23 @@ else{
 				</div>
 <!--heder end here-->
 <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">Home</a><i class="fa fa-angle-right"></i>Manage Users</li>
+                <li class="breadcrumb-item"><a href="index.html">主页</a><i class="fa fa-angle-right"></i>管理用户</li>
             </ol>
 <div class="agile-grids">	
 				<!-- tables -->
 				
 				<div class="agile-tables">
 					<div class="w3l-table-info">
-					  <h2>Manage Users</h2>
+					  <h2>管理用户</h2>
 					    <table id="table">
 						<thead>
 						  <tr>
 						  <th>#</th>
-							<th>Name</th>
-							<th>Mobile No.</th>
-							<th>Email Id</th>
-							<th>RegDate </th>
-							<th>Updation Date</th>
+							<th>姓名</th>
+							<th>手机号码</th>
+							<th>邮箱地址</th>
+							<th>注册日期</th>
+							<th>更新日期</th>
 						  </tr>
 						</thead>
 						<tbody>

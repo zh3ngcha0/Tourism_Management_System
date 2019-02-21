@@ -36,12 +36,12 @@ echo "<script type='text/javascript'> document.location = 'package-list.php'; </
 										
 									<div class="login-right">
 										<form method="post">
-											<h3>Signin with your account </h3>
-	<input type="text" name="email" id="email" placeholder="Enter your Email"  required="">	
-	<input type="password" name="password" id="password" placeholder="Password" value="" required="">	
-											<h4><a href="forgot-password.php">Forgot password</a></h4>
+											<h3>账户登录 </h3>
+	<input type="text" name="email" id="email" placeholder="邮箱地址"  required="">	
+	<input type="password" name="password" id="password" placeholder="密码" value="" required="">	
+											<h4><a href="forgot-password.php">忘记密码</a></h4>
 											
-											<input type="submit" name="signin" value="SIGNIN">
+											<input type="submit" name="signin" value="点击登录">
 										</form>
 									</div>
 									<div class="clearfix"></div>								

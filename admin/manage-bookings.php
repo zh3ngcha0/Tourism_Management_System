@@ -116,7 +116,7 @@ $msg="Booking Confirm successfully";
 				</div>
 <!--heder end here-->
 <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">Home</a><i class="fa fa-angle-right"></i>Manage Bookings</li>
+                <li class="breadcrumb-item"><a href="index.html">Home</a><i class="fa fa-angle-right"></i>管理预定</li>
             </ol>
 <div class="agile-grids">	
 				<!-- tables -->
@@ -124,19 +124,19 @@ $msg="Booking Confirm successfully";
 				else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
 				<div class="agile-tables">
 					<div class="w3l-table-info">
-					  <h2>Manage Bookings</h2>
+					  <h2>管理预定</h2>
 					    <table id="table">
 						<thead>
 						  <tr>
-						  <th>Booikn id</th>
-							<th>Name</th>
-							<th>Mobile No.</th>
-							<th>Email Id</th>
-							<th>RegDate </th>
-							<th>From /To </th>
-							<th>Comment </th>
-							<th>Status </th>
-							<th>Action </th>
+						  <th>订单号码</th>
+							<th>姓名</th>
+							<th>手机号码</th>
+							<th>邮箱地址</th>
+							<th>注册时间</th>
+							<th>开始时间/结束时间 </th>
+							<th>评论 </th>
+							<th>状态 </th>
+							<th>动作 </th>
 						  </tr>
 						</thead>
 						<tbody>

@@ -3,7 +3,7 @@
 
 <div class="header-main">
 					<div class="logo-w3-agile">
-								<h1><a href="dashboard.php">Tourism Management System</a></h1>
+								<h1><a href="dashboard.php">贵州景源旅行社管理系统</a></h1>
 							</div>
 				
 						
@@ -14,8 +14,8 @@
 											<div class="profile_img">	
 												<span class="prfil-img"><img src="images/User-icon.png" alt=""> </span> 
 												<div class="user-name">
-													<p>Welcome</p>
-													<span>Administrator</span>
+													<p>欢迎</p>
+													<span>管理员</span>
 												</div>
 												<i class="fa fa-angle-down"></i>
 												<i class="fa fa-angle-up"></i>
@@ -23,8 +23,8 @@
 											</div>	
 										</a>
 										<ul class="dropdown-menu drp-mnu">
-											<li> <a href="change-password.php"><i class="fa fa-user"></i> Profile</a> </li> 
-											<li> <a href="logout.php"><i class="fa fa-sign-out"></i> Logout</a> </li>
+											<li> <a href="change-password.php"><i class="fa fa-user"></i> 配置</a> </li> 
+											<li> <a href="logout.php"><i class="fa fa-sign-out"></i> 注销</a> </li>
 										</ul>
 									</li>
 								</ul>

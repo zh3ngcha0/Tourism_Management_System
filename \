@@ -6,7 +6,7 @@ include('includes/config.php');
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>贵州景源旅行社管理系统</title>
+<title>旅游管理系统</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
@@ -32,7 +32,7 @@ include('includes/config.php');
 <?php include('includes/header.php');?>
 <div class="banner">
 	<div class="container">
-		<h1 class="wow zoomIn animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: zoomIn;"> 贵州景源旅行社管理系统</h1>
+		<h1 class="wow zoomIn animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: zoomIn;"> 旅游管理系统</h1>
 	</div>
 </div>
 
@@ -45,7 +45,7 @@ include('includes/config.php');
 				<a href="offers.html"><i class="fa fa-usd"></i></a>
 			</div>
 			<div class="rup-rgt">
-				<h3>省钱 20%</h3>
+				<h3>省钱</h3>
 				<h4><a href="offers.html">智能旅行</a></h4>
 				
 			</div>
@@ -56,8 +56,8 @@ include('includes/config.php');
 				<a href="offers.html"><i class="fa fa-h-square"></i></a>
 			</div>
 			<div class="rup-rgt">
-				<h3>最多省 70%</h3>
-				<h4><a href="offers.html">全球酒店预订</a></h4>
+				<h3>UP TO 70% OFF</h3>
+				<h4><a href="offers.html">ON HOTELS ACROSS WORLD</a></h4>
 				
 			</div>
 				<div class="clearfix"></div>
@@ -67,8 +67,8 @@ include('includes/config.php');
 				<a href="offers.html"><i class="fa fa-mobile"></i></a>
 			</div>
 			<div class="rup-rgt">
-				<h3>手机环游世界</h3>
-				<h4><a href="offers.html">APP 下载</a></h4>
+				<h3>FLAT USD. 50 OFF</h3>
+				<h4><a href="offers.html">US APP OFFER</a></h4>
 			
 			</div>
 				<div class="clearfix"></div>
@@ -89,7 +89,7 @@ include('includes/config.php');
 
 
 	
-	<h3>套餐列表</h3>
+	<h3>Package List</h3>
 
 					
 <?php $sql = "SELECT * from tbltourpackages order by rand() limit 4";
@@ -106,14 +106,14 @@ foreach($results as $result)
 					<img src="admin/pacakgeimages/<?php echo htmlentities($result->PackageImage);?>" class="img-responsive" alt="">
 				</div>
 				<div class="col-md-6 room-midle wow fadeInUp animated" data-wow-delay=".5s">
-					<h4>套餐名称: <?php echo htmlentities($result->PackageName);?></h4>
-					<h6>套餐类型 : <?php echo htmlentities($result->PackageType);?></h6>
-					<p><b>套餐位置 :</b> <?php echo htmlentities($result->PackageLocation);?></p>
-					<p><b>套餐介绍</b> <?php echo htmlentities($result->PackageFetures);?></p>
+					<h4>Package Name: <?php echo htmlentities($result->PackageName);?></h4>
+					<h6>Package Type : <?php echo htmlentities($result->PackageType);?></h6>
+					<p><b>Package Location :</b> <?php echo htmlentities($result->PackageLocation);?></p>
+					<p><b>Features</b> <?php echo htmlentities($result->PackageFetures);?></p>
 				</div>
 				<div class="col-md-3 room-right wow fadeInRight animated" data-wow-delay=".5s">
 					<h5>USD <?php echo htmlentities($result->PackagePrice);?></h5>
-					<a href="package-details.php?pkgid=<?php echo htmlentities($result->PackageId);?>" class="view">点击查看</a>
+					<a href="package-details.php?pkgid=<?php echo htmlentities($result->PackageId);?>" class="view">Details</a>
 				</div>
 				<div class="clearfix"></div>
 			</div>
@@ -121,7 +121,7 @@ foreach($results as $result)
 <?php }} ?>
 			
 		
-<div><a href="package-list.php" class="view"> 查看更多套餐</a></div>
+<div><a href="package-list.php" class="view">View More Packages</a></div>
 </div>
 			<div class="clearfix"></div>
 	</div>
@@ -137,7 +137,7 @@ foreach($results as $result)
 			</div>
 			<div class="rou-rgt wow fadeInDown animated" data-wow-delay=".5s">
 				<h3>80000</h3>
-				<p>咨询用户</p>
+				<p>Enquiries</p>
 			</div>
 				<div class="clearfix"></div>
 		</div>
@@ -147,7 +147,7 @@ foreach($results as $result)
 			</div>
 			<div class="rou-rgt">
 				<h3>1900</h3>
-				<p>注册用户</p>
+				<p>Regestered users</p>
 			</div>
 				<div class="clearfix"></div>
 		</div>
@@ -157,7 +157,7 @@ foreach($results as $result)
 			</div>
 			<div class="rou-rgt">
 				<h3>7,00,00,000+</h3>
-				<p>预订人数</p>
+				<p>Booking</p>
 			</div>
 				<div class="clearfix"></div>
 		</div>

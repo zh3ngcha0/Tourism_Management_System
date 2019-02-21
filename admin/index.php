@@ -28,7 +28,7 @@ echo "<script type='text/javascript'> document.location = 'dashboard.php'; </scr
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>TMS | Admin Sign in</title>
+<title>贵州景源旅行社管理系统</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
@@ -53,26 +53,26 @@ echo "<script type='text/javascript'> document.location = 'dashboard.php'; </scr
 	<div class="main-wthree">
 	<div class="container">
 	<div class="sin-w3-agile">
-		<h2>Sign In</h2>
+		<h2>登录</h2>
 		<form  method="post">
 			<div class="username">
-				<span class="username">Username:</span>
+				<span class="username">用户名:</span>
 				<input type="text" name="username" class="name" placeholder="" required="">
 				<div class="clearfix"></div>
 			</div>
 			<div class="password-agileits">
-				<span class="username">Password:</span>
+				<span class="username">密码:</span>
 				<input type="password" name="password" class="password" placeholder="" required="">
 				<div class="clearfix"></div>
 			</div>
 			
 			<div class="login-w3">
-					<input type="submit" class="login" name="login" value="Sign In">
+					<input type="submit" class="login" name="login" value="点击登录">
 			</div>
 			<div class="clearfix"></div>
 		</form>
 				<div class="back">
-					<a href="../index.php">Back to home</a>
+					<a href="../index.php">回到主页</a>
 				</div>
 				
 	</div>

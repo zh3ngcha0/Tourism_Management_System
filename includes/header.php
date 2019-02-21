@@ -26,12 +26,12 @@
 
 
 			<li class="hm"><a href="index.php"><i class="fa fa-home"></i></a></li>
-				<li class="hm"><a href="admin/index.php">Admin Login</a></li>
+				<li class="hm"><a href="admin/index.php">管理员登录</a></li>
 		</ul>
 		<ul class="tp-hd-rgt wow fadeInRight animated" data-wow-delay=".5s"> 
 					
-			<li class="sig"><a href="#" data-toggle="modal" data-target="#myModal" >Sign Up</a></li> 
-			<li class="sigi"><a href="#" data-toggle="modal" data-target="#myModal4" >/ Sign In</a></li>
+			<li class="sig"><a href="#" data-toggle="modal" data-target="#myModal" >用户注册</a></li> 
+			<li class="sigi"><a href="#" data-toggle="modal" data-target="#myModal4" >/ 用户登录</a></li>
         </ul>
 		<div class="clearfix"></div>
 	</div>
@@ -44,7 +44,7 @@
 <div class="header">
 	<div class="container">
 		<div class="logo wow fadeInDown animated" data-wow-delay=".5s">
-			<a href="index.php">Tourism <span>Management System</span></a>	
+			<a href="index.php">贵州景源旅行社 <span>管理系统</span></a>	
 		</div>
 	
 		<div class="lock fadeInDown animated" data-wow-delay=".5s"> 
@@ -74,17 +74,17 @@
 				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
 					<nav class="cl-effect-1">
 						<ul class="nav navbar-nav">
-							<li><a href="index.php">Home</a></li>
-							<li><a href="page.php?type=aboutus">About</a></li>
-								<li><a href="package-list.php">Tour Packages</a></li>
-								<li><a href="page.php?type=privacy">Privacy Policy</a></li>
-								<li><a href="page.php?type=terms">Terms of Use</a></li>
-								<li><a href="page.php?type=contact">Contact Us</a></li>
+							<li><a href="index.php">主页</a></li>
+							<li><a href="page.php?type=aboutus">关于我们</a></li>
+								<li><a href="package-list.php">旅行套餐</a></li>
+								<li><a href="page.php?type=privacy">最新套餐</a></li>
+								<li><a href="page.php?type=terms">推荐套餐</a></li>
+								<li><a href="page.php?type=contact">联系我们</a></li>
 								<?php if($_SESSION['login'])
 {?>
 								<li>Need Help?<a href="#" data-toggle="modal" data-target="#myModal3"> / Write Us </a>  </li>
 								<?php } else { ?>
-								<li><a href="enquiry.php"> Enquiry </a>  </li>
+								<li><a href="enquiry.php"> 客户留言 </a>  </li>
 								<?php } ?>
 								<div class="clearfix"></div>
 

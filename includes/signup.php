@@ -57,15 +57,15 @@ error:function (){}
 											
 											<div class="login-right">
 												<form name="signup" method="post">
-													<h3>Create your account </h3>
+													<h3>创建您的账户 </h3>
 					
 
-				<input type="text" value="" placeholder="Full Name" name="fname" autocomplete="off" required="">
-				<input type="text" value="" placeholder="Mobile number" maxlength="10" name="mobilenumber" autocomplete="off" required="">
-		<input type="text" value="" placeholder="Email id" name="email" id="email" onBlur="checkAvailability()" autocomplete="off"  required="">	
+				<input type="text" value="" placeholder="姓名" name="fname" autocomplete="off" required="">
+				<input type="text" value="" placeholder="手机号码" maxlength="10" name="mobilenumber" autocomplete="off" required="">
+		<input type="text" value="" placeholder="邮箱地址" name="email" id="email" onBlur="checkAvailability()" autocomplete="off"  required="">	
 		 <span id="user-availability-status" style="font-size:12px;"></span> 
-	<input type="password" value="" placeholder="Password" name="password" required="">	
-													<input type="submit" name="submit" id="submit" value="CREATE ACCOUNT">
+	<input type="password" value="" placeholder="密码" name="password" required="">	
+													<input type="submit" name="submit" id="submit" value="创建账户">
 												</form>
 											</div>
 												<div class="clearfix"></div>								

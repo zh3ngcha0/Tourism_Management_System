@@ -74,24 +74,24 @@ else{
 				</div>
 <!--heder end here-->
 <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">Home</a><i class="fa fa-angle-right"></i>Manage Packages</li>
+                <li class="breadcrumb-item"><a href="index.html">主页</a><i class="fa fa-angle-right"></i>套餐管理</li>
             </ol>
 <div class="agile-grids">	
 				<!-- tables -->
 				
 				<div class="agile-tables">
 					<div class="w3l-table-info">
-					  <h2>Manage Packages</h2>
+					  <h2>套餐管理</h2>
 					    <table id="table">
 						<thead>
 						  <tr>
 						  <th>#</th>
-							<th >Name</th>
-							<th>Type</th>
-							<th>Location</th>
-							<th>Price</th>
-							<th>Creation Date</th>
-							<th>Action</th>
+							<th >名称</th>
+							<th>类型</th>
+							<th>位置</th>
+							<th>价格</th>
+							<th>添加时间</th>
+							<th>动作</th>
 						  </tr>
 						</thead>
 						<tbody>

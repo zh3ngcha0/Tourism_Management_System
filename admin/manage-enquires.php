@@ -102,7 +102,7 @@ $msg="Enquiry  successfully read";
 				</div>
 <!--heder end here-->
 <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">Home</a><i class="fa fa-angle-right"></i>Manage Enquiries</li>
+                <li class="breadcrumb-item"><a href="index.html">主页</a><i class="fa fa-angle-right"></i>管理咨询</li>
             </ol>
 <div class="agile-grids">	
 				<!-- tables -->
@@ -110,18 +110,18 @@ $msg="Enquiry  successfully read";
 				else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
 				<div class="agile-tables">
 					<div class="w3l-table-info">
-					  <h2>Manage Enquiries</h2>
+					  <h2>管理咨询</h2>
 					    <table id="table">
 						<thead>
 						  <tr>
-						  <th>Ticket id</th>
-							<th>Name</th>
-							<th>Mobile No./ Email</th>
+						  <th>咨询号</th>
+							<th>姓名</th>
+							<th>手机号码./ 邮箱地址</th>
 							
-							<th>Subject </th>
-							<th>Description </th>
-							<th>Posting date </th>
-							<th>Action </th>
+							<th>项目 </th>
+							<th>描述 </th>
+							<th>提交日期 </th>
+							<th>动作 </th>
 							
 						  </tr>
 						</thead>

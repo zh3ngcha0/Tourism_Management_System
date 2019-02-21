@@ -114,7 +114,7 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
 				</div>
 <!--heder end here-->
 <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">Home</a><i class="fa fa-angle-right"></i>Manage Issues</li>
+                <li class="breadcrumb-item"><a href="index.html">主页</a><i class="fa fa-angle-right"></i>管理问题</li>
             </ol>
 <div class="agile-grids">	
 				<!-- tables -->
@@ -122,18 +122,18 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
 				else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
 				<div class="agile-tables">
 					<div class="w3l-table-info">
-					  <h2>Manage Issues</h2>
+					  <h2>管理问题</h2>
 					    <table id="table">
 						<thead>
 						  <tr>
 						  <th>#</th>
-							<th>Name</th>
-							<th>Mobile No.</th>
-							<th>Email Id</th>
-							<th>Issues </th>
-							<th>Description </th>
-							<th>Posting date </th>
-							<th>Action </th>
+							<th>姓名</th>
+							<th>手机号码</th>
+							<th>邮箱地址</th>
+							<th>问题 </th>
+							<th>问题描述 </th>
+							<th>提交日期 </th>
+							<th>动作 </th>
 							
 						  </tr>
 						</thead>
