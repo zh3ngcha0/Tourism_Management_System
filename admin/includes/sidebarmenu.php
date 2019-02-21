@@ -69,7 +69,7 @@
 								
 										  </ul>
 										</li>
-									   <li id="menu-academico" ><a href="#"><i class="fa fa-user-ul" aria-hidden="true"></i><span>综合</span> <span class="fa fa-angle-right" style="float: right"></span><div class="clearfix"></div></a>
+									   <li id="menu-academico" ><a href="#"><i class="fa fa-compreh-ul" aria-hidden="true"></i><span>综合</span> <span class="fa fa-angle-right" style="float: right"></span><div class="clearfix"></div></a>
 										   <ul id="menu-academico-sub" >
 										    <li id="menu-academico-avaliacoes" ><a href="create-package.php">综合应用</a></li>
 											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">旅游顾问</a></li>
@@ -83,15 +83,72 @@
 								
 										  </ul>
 										</li>
+										<li id="menu-academico" ><a href="#"><i class="fa fa-insurance-ul" aria-hidden="true"></i><span>保险</span> <span class="fa fa-angle-right" style="float: right"></span><div class="clearfix"></div></a>
+										   <ul id="menu-academico-sub" >
+										    <li id="menu-academico-avaliacoes" ><a href="create-package.php">保险模块</a></li>
+											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">保险产品管理</a></li>
+											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">添加保险产品</a></li>
+											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">保险订单管理</a></li>
+								
+										  </ul>
+										</li>
+										<li id="menu-academico" ><a href="#"><i class="fa fa-system-ul" aria-hidden="true"></i><span>系统</span> <span class="fa fa-angle-right" style="float: right"></span><div class="clearfix"></div></a>
+										   <ul id="menu-academico-sub" >
+										    <li id="menu-academico-avaliacoes" ><a href="create-package.php">系统设置</a></li>
+											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">系统基本设置</a></li>
+											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">系统日志管理</a></li>
+											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">邮件设置</a></li>
+											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">短信设置</a></li>
+											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">电子合同设置</a></li>
+											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">后台密码修改</a></li>
+											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">系统LOGO</a></li>
+											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">网银在线设置</a></li>
+											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">支付宝设置</a></li>
+											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">系统优化</a></li>
+								
+										  </ul>
+										</li>
+										<li id="menu-academico" ><a href="#"><i class="fa fa-onlinestore-ul" aria-hidden="true"></i><span></span>网店 <span class="fa fa-angle-right" style="float: right"></span><div class="clearfix"></div></a>
+										   <ul id="menu-academico-sub" >
+										    <li id="menu-academico-avaliacoes" ><a href="create-package.php">网店接口</a></li>
+											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">网店基本设置</a></li>
+											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">导航栏设置</a></li>
+											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">拓展栏目设置</a></li>
+											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">新闻模块设置</a></li>
+											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">合作伙伴管理</a></li>
+											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">友情连接管理</a></li>
+											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">首页大类设置</a></li>
+											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">私人定制管理</a></li>
+								
+										  </ul>
+										</li>
+										<li id="menu-academico" ><a href="#"><i class="fa fa-advertise-ul" aria-hidden="true"></i><span></span>广告 <span class="fa fa-angle-right" style="float: right"></span><div class="clearfix"></div></a>
+										   <ul id="menu-academico-sub" >
+										    <li id="menu-academico-avaliacoes" ><a href="create-package.php">广告位管理</a></li>
+											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">网站首页</a></li>
+											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">微店幻灯片</a></li>
+											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">登录界面广告</a></li>
+											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">分销商界面广告</a></li>
+								
+										  </ul>
+										</li>
+										<li id="menu-academico" ><a href="#"><i class="fa fa-advertise-ul" aria-hidden="true"></i><span></span>帮助 <span class="fa fa-angle-right" style="float: right"></span><div class="clearfix"></div></a>
+										   <ul id="menu-academico-sub" >
+										    <li id="menu-academico-avaliacoes" ><a href="create-package.php">帮助中心</a></li>
+											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">版本信息</a></li>
+											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">使用帮助</a></li>
+								
+										  </ul>
+										</li>
 										
-									   
+									 <!--
 									
 									/*<li id="menu-academico" ><a href="manage-users.php"><i class="fa fa-users" aria-hidden="true"></i><span>管理用户</span><div class="clearfix"></div></a></li> 
 									
 									<li><a href="manage-bookings.php"><i class="fa fa-list" aria-hidden="true"></i>  <span>管理预定</span><div class="clearfix"></div></a></li>
 									 <li><a href="manageissues.php"><i class="fa fa-table"></i>  <span>管理问题</span><div class="clearfix"></div></a></li>
 									<li><a href="manage-enquires.php"><i class="fa fa-file-text-o" aria-hidden="true"></i>  <span>管理咨询</span><div class="clearfix"></div></a></li>
-									<li><a href="manage-pages.php"><i class="fa fa-file-text-o" aria-hidden="true"></i>  <span>管理页面</span><div class="clearfix"></div></a></li>*/
+									<li><a href="manage-pages.php"><i class="fa fa-file-text-o" aria-hidden="true"></i>  <span>管理页面</span><div class="clearfix"></div></a></li> -->
 							     
 									
 								  </ul>
