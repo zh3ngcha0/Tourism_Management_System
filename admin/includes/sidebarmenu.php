@@ -7,7 +7,7 @@
 									<ul id="menu" >
 										<li><a href="dashboard.php"><i class="fa fa-tachometer"></i> <span>首页</span><div class="clearfix"></div></a></li>
 										
-									 <li id="menu-academico" ><a href="#"><i class="fa fa-products-ul" aria-hidden="true"></i><span>产品</span> <span class="fa fa-angle-right" style="float: right"></span><div class="clearfix"></div></a>
+									 <li id="menu-academico" ><a href="#"><i class="fa fa-product-hunt" aria-hidden="true"></i><span>产品</span> <span class="fa fa-angle-right" style="float: right"></span><div class="clearfix"></div></a>
 										   <ul id="menu-academico-sub" >
 										   <li id="menu-academico-avaliacoes" ><a href="create-package.php">产品管理</a></li>
 											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">产品分类设置</a></li>
@@ -25,7 +25,7 @@
 											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">产品回收站</a></li>
 										  </ul>
 										</li>
-                                     <li id="menu-academico" ><a href="#"><i class="fa fa-orders-ul" aria-hidden="true"></i><span>订单</span> <span class="fa fa-angle-right" style="float: right"></span><div class="clearfix"></div></a>
+                                     <li id="menu-academico" ><a href="#"><i class="fa fa-bars" aria-hidden="true"></i><span>订单</span> <span class="fa fa-angle-right" style="float: right"></span><div class="clearfix"></div></a>
 										   <ul id="menu-academico-sub" >
 										   <li id="menu-academico-avaliacoes" ><a href="create-package.php">订单管理</a></li>
 											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">所有产品列表</a></li>
@@ -42,7 +42,7 @@
 								
 										  </ul>
 										</li>
-									  <li id="menu-academico" ><a href="#"><i class="fa fa-finance-ul" aria-hidden="true"></i><span>财务</span> <span class="fa fa-angle-right" style="float: right"></span><div class="clearfix"></div></a>
+									  <li id="menu-academico" ><a href="#"><i class="fa fa-money" aria-hidden="true"></i><span>财务</span> <span class="fa fa-angle-right" style="float: right"></span><div class="clearfix"></div></a>
 										   <ul id="menu-academico-sub" >
 										    <li id="menu-academico-avaliacoes" ><a href="create-package.php">财务中心</a></li>
 											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">分销商账目</a></li>
@@ -57,7 +57,7 @@
 										  </ul>
 										</li>
 										
-									  <li id="menu-academico" ><a href="#"><i class="fa fa-user-ul" aria-hidden="true"></i><span>用户</span> <span class="fa fa-angle-right" style="float: right"></span><div class="clearfix"></div></a>
+									  <li id="menu-academico" ><a href="#"><i class="fa fa-users" aria-hidden="true"></i><span>用户</span> <span class="fa fa-angle-right" style="float: right"></span><div class="clearfix"></div></a>
 										   <ul id="menu-academico-sub" >
 										    <li id="menu-academico-avaliacoes" ><a href="create-package.php">用户管理</a></li>
 											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">分销商管理</a></li>
