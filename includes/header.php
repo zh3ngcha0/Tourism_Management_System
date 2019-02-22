@@ -74,12 +74,17 @@
 				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
 					<nav class="cl-effect-1">
 						<ul class="nav navbar-nav">
-							<li><a href="index.php">主页</a></li>
-							<li><a href="page.php?type=aboutus">关于我们</a></li>
-								<li><a href="package-list.php">旅行套餐</a></li>
-								<li><a href="page.php?type=privacy">最新套餐</a></li>
-								<li><a href="page.php?type=terms">推荐套餐</a></li>
-								<li><a href="page.php?type=contact">联系我们</a></li>
+							<li><a href="index.php">首页</a></li>
+							<li><a href="page.php?type=aboutus">周边</a></li>
+							<li><a href="package-list.php">国内</a></li>
+							<li><a href="page.php?type=privacy">出境</a></li>
+							<li><a href="page.php?type=terms">游轮</a></li>
+							<li><a href="page.php?type=contact">自驾游</a></li>
+							<li><a href="index.php">保险</a></li>
+							<li><a href="index.php">热卖品</a></li>
+							<li><a href="index.php">签证</a></li>
+							<li><a href="index.php">小包团</a></li>
+							<li><a href="index.php">旅游攻略</a></li>
 								<?php if($_SESSION['login'])
 {?>
 								<li>Need Help?<a href="#" data-toggle="modal" data-target="#myModal3"> / Write Us </a>  </li>
