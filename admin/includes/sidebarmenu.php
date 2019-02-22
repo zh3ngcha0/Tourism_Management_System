@@ -69,7 +69,7 @@
 								
 										  </ul>
 										</li>
-									   <li id="menu-academico" ><a href="#"><i class="fa fa-compreh-ul" aria-hidden="true"></i><span>综合</span> <span class="fa fa-angle-right" style="float: right"></span><div class="clearfix"></div></a>
+									   <li id="menu-academico" ><a href="#"><i class="fa fa-th" aria-hidden="true"></i><span>综合</span> <span class="fa fa-angle-right" style="float: right"></span><div class="clearfix"></div></a>
 										   <ul id="menu-academico-sub" >
 										    <li id="menu-academico-avaliacoes" ><a href="create-package.php">综合应用</a></li>
 											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">旅游顾问</a></li>
@@ -83,7 +83,7 @@
 								
 										  </ul>
 										</li>
-										<li id="menu-academico" ><a href="#"><i class="fa fa-insurance-ul" aria-hidden="true"></i><span>保险</span> <span class="fa fa-angle-right" style="float: right"></span><div class="clearfix"></div></a>
+										<li id="menu-academico" ><a href="#"><i class="fa fa-handshake-o" aria-hidden="true"></i><span>保险</span> <span class="fa fa-angle-right" style="float: right"></span><div class="clearfix"></div></a>
 										   <ul id="menu-academico-sub" >
 										    <li id="menu-academico-avaliacoes" ><a href="create-package.php">保险模块</a></li>
 											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">保险产品管理</a></li>
@@ -92,7 +92,7 @@
 								
 										  </ul>
 										</li>
-										<li id="menu-academico" ><a href="#"><i class="fa fa-system-ul" aria-hidden="true"></i><span>系统</span> <span class="fa fa-angle-right" style="float: right"></span><div class="clearfix"></div></a>
+										<li id="menu-academico" ><a href="#"><i class="fa fa-cog" aria-hidden="true"></i><span>系统</span> <span class="fa fa-angle-right" style="float: right"></span><div class="clearfix"></div></a>
 										   <ul id="menu-academico-sub" >
 										    <li id="menu-academico-avaliacoes" ><a href="create-package.php">系统设置</a></li>
 											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">系统基本设置</a></li>
@@ -108,7 +108,7 @@
 								
 										  </ul>
 										</li>
-										<li id="menu-academico" ><a href="#"><i class="fa fa-onlinestore-ul" aria-hidden="true"></i><span></span>网店 <span class="fa fa-angle-right" style="float: right"></span><div class="clearfix"></div></a>
+										<li id="menu-academico" ><a href="#"><i class="fa fa-internet-explorer" aria-hidden="true"></i><span></span>网店 <span class="fa fa-angle-right" style="float: right"></span><div class="clearfix"></div></a>
 										   <ul id="menu-academico-sub" >
 										    <li id="menu-academico-avaliacoes" ><a href="create-package.php">网店接口</a></li>
 											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">网店基本设置</a></li>
@@ -122,7 +122,7 @@
 								
 										  </ul>
 										</li>
-										<li id="menu-academico" ><a href="#"><i class="fa fa-advertise-ul" aria-hidden="true"></i><span></span>广告 <span class="fa fa-angle-right" style="float: right"></span><div class="clearfix"></div></a>
+										<li id="menu-academico" ><a href="#"><i class="fa fa-clipboard" aria-hidden="true"></i><span></span>广告 <span class="fa fa-angle-right" style="float: right"></span><div class="clearfix"></div></a>
 										   <ul id="menu-academico-sub" >
 										    <li id="menu-academico-avaliacoes" ><a href="create-package.php">广告位管理</a></li>
 											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">网站首页</a></li>
@@ -132,7 +132,7 @@
 								
 										  </ul>
 										</li>
-										<li id="menu-academico" ><a href="#"><i class="fa fa-advertise-ul" aria-hidden="true"></i><span></span>帮助 <span class="fa fa-angle-right" style="float: right"></span><div class="clearfix"></div></a>
+										<li id="menu-academico" ><a href="#"><i class="fa fa-question-circle" aria-hidden="true"></i><span></span>帮助 <span class="fa fa-angle-right" style="float: right"></span><div class="clearfix"></div></a>
 										   <ul id="menu-academico-sub" >
 										    <li id="menu-academico-avaliacoes" ><a href="create-package.php">帮助中心</a></li>
 											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">版本信息</a></li>
