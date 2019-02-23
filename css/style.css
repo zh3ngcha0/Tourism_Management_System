@@ -135,13 +135,13 @@ i.fa.fa-lock {
 /*-- /header --*/
 /*-- banner --*/
 .banner {
-    background: url(../images/3.jpg)no-repeat;
+    background: url(../images/6.jpg)no-repeat;
     background-size: cover;
     -webkit-background-size: cover;
     -o-background-size: cover;
     -ms-background-size: cover;
     -moz-background-size: cover;
-    min-height: 430px;
+    min-height: 230px;
 }
 .banner h1 {
     font-size: 50px;
@@ -445,7 +445,7 @@ i.fa.fa-truck,i.fa.fa-user,i.fa.fa-ticket {
 /*-- /footer --*/
 /*-- bus --*/
 .banner-1 {
-    background: url(../images/3.jpg)no-repeat;
+    background: url(../images/6.jpg)no-repeat;
     background-size: cover;
     -webkit-background-size: cover;
     -o-background-size: cover;
