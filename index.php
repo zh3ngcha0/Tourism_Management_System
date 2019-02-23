@@ -27,6 +27,14 @@ include('includes/config.php');
 		 new WOW().init();
 	</script>
 <!--//end-animate-->
+<style>
+        *{margin:0;padding:0;}
+        #leftMenu ul{width:100px;position:absolute;background:#DADADA;list-style:none;}
+        #leftMenu li{width:100px;position: relative;}
+        #leftMenu li>ul{left: 100px;top: 0;display: none;}
+        #leftMenu li:hover>ul{display: block;}
+</style>
+
 </head>
 <body>
 <?php include('includes/header.php');?>
