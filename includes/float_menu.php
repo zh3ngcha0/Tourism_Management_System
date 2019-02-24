@@ -6,8 +6,10 @@
         *{margin:0;padding:0;}
         #leftMenu ul{width:100px;position:absolute;background:#DADADA;list-style:none;}
         #leftMenu li{width:100px;position: relative;}
+        #leftMenu li>ul{left: 100px;top: 0;}
         #leftMenu li>ul{left: 100px;top: 0;display: none;}
         #leftMenu li:hover>ul{display: block;}
+
     </style>
 </head>
 <body>
@@ -18,17 +20,6 @@
             <ul class="nav nav-tabs nav-stacked" data-spy="affix" data-offset-top="225">
                     
                 <li class="active"><a href="index.php">周边旅游</a>
-                    <ul>
-                    
-                         <li><a href="#">100003</a></li>
-                    
-                         <li><a href="#">100002</a>
-                             <ul>
-                                 <li><a href="#">100021</a></li>
-                                 <li><a href="#">100022</a></li>
-                             </ul>
-                         </li>
-                   </ul>
                 </li>
 
                 <li class="active"><a href="index.php">国内旅游</a></li>
@@ -40,3 +31,5 @@
 
 </body>
 </html>
+
+
