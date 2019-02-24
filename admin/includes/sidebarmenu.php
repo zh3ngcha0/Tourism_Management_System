@@ -9,9 +9,9 @@
 										
 									 <li id="menu-academico" ><a href="#"><i class="fa fa-product-hunt" aria-hidden="true"></i><span>产品</span> <span class="fa fa-angle-right" style="float: right"></span><div class="clearfix"></div></a>
 										   <ul id="menu-academico-sub" >
-										   <li id="menu-academico-avaliacoes" ><a href="create-package.php">产品管理</a></li>
-											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">产品分类设置</a></li>
-											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">所有产品列表</a></li>
+										   <li id="menu-academico-avaliacoes" ><a href="#">产品管理</a></li>
+											<li id="menu-academico-avaliacoes" ><a href="create-product.php">产品分类设置</a></li>
+											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php.php">所有产品列表</a></li>
 											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">周边旅游</a></li>
 											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">国内旅游</a></li>
 											<li id="menu-academico-avaliacoes" ><a href="manage-packages.php">出境旅游</a></li>
