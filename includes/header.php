@@ -26,7 +26,7 @@
 
 
 			<li class="hm"><a href="index.php"><i class="fa fa-home"></i></a></li>
-				<li class="hm"><a href="admin/index.php">管理员登录</a></li>
+				<li class="hm"><a href="xadmin/login.php">管理员登录</a></li>
 		</ul>
 		<ul class="tp-hd-rgt wow fadeInRight animated" data-wow-delay=".5s"> 
 					
