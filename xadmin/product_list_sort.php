@@ -3,7 +3,7 @@ require_once "./include.php";
 $page = isset($_REQUEST['page']) ? (int)$_REQUEST['page'] : 1;
 $sql = "SELECT * FROM `products`";
 $totalRows = getResultNum(connect(), $sql);
-$pageSize = 2;
+$pageSize = 8;
 $totalPage = ceil($totalRows / $pageSize);
 if ($page < 1 || $page == null || !is_numeric($page)) {
     $page = 1;
@@ -100,20 +100,26 @@ if (!$rows) {
                    <td><?= $row['reward'] ?></td>
                    <td><?= $row['comment'] ?></td>
                    <!-- <td><?= $row['status'] ?></td> -->
-                   <?php
-                       if ((<?= $row['status'] ?>)>"0")
-                       {
-                           <td class="td-status"> <span class="layui-btn layui-btn-normal layui-btn-mini">已启用</span></td>;
-                       }
-                       else
-                       {  
-                           echo "Have a good night!";
-                       }
-                   ?>
+                   
+                   <?php if ($row['status'] > "0"): ?>
+                       <td class="td-status"> <span class="layui-btn layui-btn-normal layui-btn-mini">已启用</span></td>
+                   <?php else: ?>
+                       <td class="td-status"> <span class="layui-btn layui-btn-disabled layui-btn-mini">未启用</span></td>
+                   <?php endif; ?>
+                   
                    <td class="td-manage">
-                       <a onclick="member_stop(this,'10001')" href="javascript:;"  title="启用">
-                           <i class="layui-icon">&#xe601;</i>
-                       </a>
+
+                       <?php if ($row['status'] > "0"): ?>
+                           
+                           <a onclick="member_stop(this)" pro_id = <?= $row['id'] ?> href="javascript:;"  title="停用">
+                               <i class="layui-icon">&#xe601;</i>
+                           </a>
+                       <?php else: ?>
+                           <a onclick="member_start(this)" pro_id = <?= $row['id'] ?> href="javascript:;"  title="启用">
+                               <i class="layui-icon">&#xe601;</i>
+                           </a>
+                       <?php endif; ?>
+
                        <a title="编辑"  onclick="x_admin_show('编辑','member-edit.html',600,400)" href="javascript:;">
                            <i class="layui-icon">&#xe642;</i>
                        </a>
@@ -132,62 +138,6 @@ if (!$rows) {
             </tr>
             <?php endif; ?>
 
-          <tr>
-            <td>
-              <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='2'><i class="layui-icon">&#xe605;</i></div>
-            </td>
-            <td>1</td>
-            <td>小明</td>
-            <td>男</td>
-            <td>13000000000</td>
-            <td>admin@mail.com</td>
-            <td>北京市 海淀区</td>
-            <td>2017-01-01 11:11:42</td>
-            <td class="td-status">
-              <span class="layui-btn layui-btn-normal layui-btn-mini">已启用</span></td>
-            <td class="td-manage">
-              <a onclick="member_stop(this,'10001')" href="javascript:;"  title="启用">
-                <i class="layui-icon">&#xe601;</i>
-              </a>
-              <a title="编辑"  onclick="x_admin_show('编辑','member-edit.html',600,400)" href="javascript:;">
-                <i class="layui-icon">&#xe642;</i>
-              </a>
-              <a onclick="x_admin_show('修改密码','member-password.html',600,400)" title="修改密码" href="javascript:;">
-                <i class="layui-icon">&#xe631;</i>
-              </a>
-              <a title="删除" onclick="member_del(this,'要删除的id')" href="javascript:;">
-                <i class="layui-icon">&#xe640;</i>
-              </a>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='2'><i class="layui-icon">&#xe605;</i></div>
-            </td>
-            <td>1</td>
-            <td>小明</td>
-            <td>男</td>
-            <td>13000000000</td>
-            <td>admin@mail.com</td>
-            <td>北京市 海淀区</td>
-            <td>2017-01-01 11:11:42</td>
-            <td class="td-status">
-              <span class="layui-btn layui-btn-normal layui-btn-mini">已启用</span></td>
-            <td class="td-manage">
-              <a onclick="member_stop(this,'10001')" href="javascript:;"  title="启用">
-                <i class="layui-icon">&#xe601;</i>
-              </a>
-              <a title="编辑"  onclick="x_admin_show('编辑','member-edit.html',600,400)" href="javascript:;">
-                <i class="layui-icon">&#xe642;</i>
-              </a>
-              <a onclick="x_admin_show('修改密码','member-password.html',600,400)" title="修改密码" href="javascript:;">
-                <i class="layui-icon">&#xe631;</i>
-              </a>
-              <a title="删除" onclick="member_del(this,'要删除的id')" href="javascript:;">
-                <i class="layui-icon">&#xe640;</i>
-              </a>
-            </td>
-          </tr>
         </tbody>
       </table>
       <div class="page">
@@ -218,25 +168,33 @@ if (!$rows) {
       });
 
        /*用户-停用*/
+
+      function member_start(obj,id){
+          layer.confirm('确认要启用吗？',function(index){
+
+                $(obj).attr('title','停用')
+                $(obj).find('i').html('&#xe601;');
+
+                $(obj).parents("tr").find(".td-status").find('span').addClass('layui-btn-normal').html('已启用');
+                layer.msg('已启用!',{icon: 5,time:1000});
+              
+                window.location = "active_pro_status.php?id=" + $(obj).attr('pro_id');
+              
+          });
+      }
+
       function member_stop(obj,id){
           layer.confirm('确认要停用吗？',function(index){
 
-              if($(obj).attr('title')=='启用'){
-
                 //发异步把用户状态进行更改
-                $(obj).attr('title','停用')
+                $(obj).attr('title','启用')
                 $(obj).find('i').html('&#xe62f;');
 
                 $(obj).parents("tr").find(".td-status").find('span').addClass('layui-btn-disabled').html('已停用');
                 layer.msg('已停用!',{icon: 5,time:1000});
 
-              }else{
-                $(obj).attr('title','启用')
-                $(obj).find('i').html('&#xe601;');
+                window.location = "dactive_pro_status.php?id=" + $(obj).attr('pro_id');
 
-                $(obj).parents("tr").find(".td-status").find('span').removeClass('layui-btn-disabled').html('已启用');
-                layer.msg('已启用!',{icon: 5,time:1000});
-              }
               
           });
       }
