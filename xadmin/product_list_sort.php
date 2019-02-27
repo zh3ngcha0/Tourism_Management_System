@@ -1,3 +1,25 @@
+<?php
+require_once "./include.php";
+$page = isset($_REQUEST['page']) ? (int)$_REQUEST['page'] : 1;
+$sql = "SELECT * FROM `products`";
+$totalRows = getResultNum(connect(), $sql);
+$pageSize = 2;
+$totalPage = ceil($totalRows / $pageSize);
+if ($page < 1 || $page == null || !is_numeric($page)) {
+    $page = 1;
+}
+$offset = ($page - 1) * $pageSize;
+$sql = "SELECT `id`, `pro_name`, `pro_image_id`, `type`, `subtype`, `getratio`, `reward`, `comment`, `status` FROM `products` ORDER BY `id` LIMIT {$offset},{$pageSize}";
+$rows = fetchAll(connect(), $sql);
+
+if (!$rows) {
+    alertMessage("没有任何分类，请先添加！", "addCate.php");
+}
+
+?>
+
+
+
 <!DOCTYPE html>
 <html>
   
@@ -52,16 +74,64 @@
               <div class="layui-unselect header layui-form-checkbox" lay-skin="primary"><i class="layui-icon">&#xe605;</i></div>
             </th>
             <th>ID</th>
-            <th>用户名</th>
-            <th>性别</th>
-            <th>手机</th>
-            <th>邮箱</th>
-            <th>地址</th>
-            <th>加入时间</th>
+            <th>产品名</th>
+            <th>图片id</th>
+            <th>大类</th>
+            <th>第二大类</th>
+            <th>返点比例</th>
+            <th>人头费</th>
+            <th>描述</th>
             <th>状态</th>
-            <th>操作</th></tr>
+            <th>操作</th>
+          </tr>
         </thead>
         <tbody>
+            <?php foreach ($rows as $row): ?>
+               <tr>
+                   <td>
+                       <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='2'><i class="layui-icon">&#xe605;</i></div>
+                   </td>
+                   <td><?= $row['id'] ?></td>
+                   <td><?= $row['pro_name'] ?></td>
+                   <td><?= $row['pro_image_id'] ?></td>
+                   <td><?= $row['type'] ?></td>
+                   <td><?= $row['subtype'] ?></td>
+                   <td><?= $row['getratio'] ?></td>
+                   <td><?= $row['reward'] ?></td>
+                   <td><?= $row['comment'] ?></td>
+                   <!-- <td><?= $row['status'] ?></td> -->
+                   <?php
+                       if ((<?= $row['status'] ?>)>"0")
+                       {
+                           <td class="td-status"> <span class="layui-btn layui-btn-normal layui-btn-mini">已启用</span></td>;
+                       }
+                       else
+                       {  
+                           echo "Have a good night!";
+                       }
+                   ?>
+                   <td class="td-manage">
+                       <a onclick="member_stop(this,'10001')" href="javascript:;"  title="启用">
+                           <i class="layui-icon">&#xe601;</i>
+                       </a>
+                       <a title="编辑"  onclick="x_admin_show('编辑','member-edit.html',600,400)" href="javascript:;">
+                           <i class="layui-icon">&#xe642;</i>
+                       </a>
+                       <a onclick="x_admin_show('修改密码','member-password.html',600,400)" title="修改密码" href="javascript:;">
+                           <i class="layui-icon">&#xe631;</i>
+                       </a>
+                       <a title="删除" onclick="member_del(this,'要删除的id')" href="javascript:;">
+                           <i class="layui-icon">&#xe640;</i>
+                       </a>
+                   </td>
+               </tr>
+            <?php endforeach; ?>
+            <?php if ($totalRows > $pageSize): ?>
+            <tr>
+                <td colspan="4"><?php echo showPage($page, $totalPage) ?></td>
+            </tr>
+            <?php endif; ?>
+
           <tr>
             <td>
               <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='2'><i class="layui-icon">&#xe605;</i></div>
