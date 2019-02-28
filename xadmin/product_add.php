@@ -24,46 +24,60 @@
     <div class="x-body layui-anim layui-anim-up">
         <form class="layui-form">
           <div class="layui-form-item">
-              <label for="L_email" class="layui-form-label">
-                  <span class="x-red">*</span>邮箱
+              <label for="L_proname" class="layui-form-label">
+                  <span class="x-red">*</span>产品名称
               </label>
               <div class="layui-input-inline">
-                  <input type="text" id="L_email" name="email" required="" lay-verify="email"
-                  autocomplete="off" class="layui-input">
-              </div>
-              <div class="layui-form-mid layui-word-aux">
-                  <span class="x-red">*</span>将会成为您唯一的登入名
-              </div>
-          </div>
-          <div class="layui-form-item">
-              <label for="L_username" class="layui-form-label">
-                  <span class="x-red">*</span>昵称
-              </label>
-              <div class="layui-input-inline">
-                  <input type="text" id="L_username" name="username" required="" lay-verify="nikename"
+                  <input type="text" id="L_proname" name="proname" required="" lay-verify="proname"
                   autocomplete="off" class="layui-input">
               </div>
           </div>
           <div class="layui-form-item">
-              <label for="L_pass" class="layui-form-label">
-                  <span class="x-red">*</span>密码
+              <label for="L_protype" class="layui-form-label">
+                  <span class="x-red">*</span>产品类型
               </label>
               <div class="layui-input-inline">
-                  <input type="password" id="L_pass" name="pass" required="" lay-verify="pass"
+                  <input type="text" id="L_protype" name="protype" required="" lay-verify="protype"
                   autocomplete="off" class="layui-input">
-              </div>
-              <div class="layui-form-mid layui-word-aux">
-                  6到16个字符
               </div>
           </div>
           <div class="layui-form-item">
-              <label for="L_repass" class="layui-form-label">
-                  <span class="x-red">*</span>确认密码
+              <label for="L_subtype" class="layui-form-label">
+                  <span class="x-red">*</span>产品二级类型
               </label>
               <div class="layui-input-inline">
-                  <input type="password" id="L_repass" name="repass" required="" lay-verify="repass"
+                  <input type="text" id="L_subtype" name="subtype" required="" lay-verify="subtype"
                   autocomplete="off" class="layui-input">
               </div>
+          </div>
+          <div class="layui-form-item">
+              <label for="L_getratio" class="layui-form-label">
+                  <span class="x-red">*</span>返点比例
+              </label>
+              <div class="layui-input-inline">
+                  <input type="text" id="L_getratio" name="getratio" required="" lay-verify="getratio"
+                  autocomplete="off" class="layui-input">
+              </div>
+          </div>
+          <div class="layui-form-item">
+              <label for="L_reward" class="layui-form-label">
+                  <span class="x-red">*</span>人头费
+              </label>
+              <div class="layui-input-inline">
+                  <input type="text" id="L_reward" name="reward" required="" lay-verify="reward"
+                  autocomplete="off" class="layui-input">
+              </div>
+          </div>
+          <div class="layui-form-item">
+              <button type="button" class="layui-btn" id="test1">
+                  <i class="layui-icon">&#xe67c;</i>产品图片
+              </button>
+          </div>
+          <div class="layui-form-item layui-form-text">
+              <label class="layui-form-label">产品描述</label>
+                  <div class="layui-input-block">
+                      <textarea placeholder="既然选择了远方，便只顾风雨兼程；路漫漫其修远兮，吾将上下而求索" value="" class="layui-textarea"></textarea>
+                  </div>
           </div>
           <div class="layui-form-item">
               <label for="L_repass" class="layui-form-label">
@@ -74,6 +88,27 @@
           </div>
       </form>
     </div>
+
+<script>
+layui.use('upload', function(){
+  var upload = layui.upload;
+   
+  //执行实例
+  var uploadInst = upload.render({
+    elem: '#test1' //绑定元素
+    ,url: '/upload/' //上传接口
+    ,done: function(res){
+      //上传完毕回调
+    }
+    ,error: function(){
+      //请求异常回调
+    }
+  });
+});
+</script>
+
+
+
     <script>
         layui.use(['form','layer'], function(){
             $ = layui.jquery;
@@ -82,16 +117,10 @@
         
           //自定义验证规则
           form.verify({
-            nikename: function(value){
-              if(value.length < 5){
-                return '昵称至少得5个字符啊';
+            proname: function(value){
+              if(value.length > 10){
+                return '产品名称必须小于十个字符';
               }
-            }
-            ,pass: [/(.+){6,12}$/, '密码必须6到12位']
-            ,repass: function(value){
-                if($('#L_pass').val()!=$('#L_repass').val()){
-                    return '两次密码不一致';
-                }
             }
           });
 
