@@ -19,6 +19,27 @@
       <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
+
+
+<style>
+
+    body{
+        margin: 100px 30px;
+    }
+    body h1{
+        text-align:center;
+        margin: 100px auto;
+    }
+    .layui-upload img{
+        display: block;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        margin-left: 100px;
+        -webkit-border-radius: 50%;
+        border: 4px solid #44576B;
+    }
+</style>
   
   <body>
     <div class="x-body layui-anim layui-anim-up">
@@ -69,10 +90,15 @@
               </div>
           </div>
           <div class="layui-form-item">
-              <button type="button" class="layui-btn" id="test1">
-                  <i class="layui-icon">&#xe67c;</i>产品图片
-              </button>
+              <div class="layui-upload">
+                  <button type="button" name="img_upload" class="layui-btn btn_upload_img">
+                      <i class="layui-icon">&#xe67c;</i>上传图片
+                  </button>
+                  <img class="layui-upload-img img-upload-view">
+                  <p id="demoText"></p>
+              </div>
           </div>
+
           <div class="layui-form-item layui-form-text">
               <label class="layui-form-label">产品描述</label>
                   <div class="layui-input-block">
@@ -89,24 +115,43 @@
       </form>
     </div>
 
-<script>
-layui.use('upload', function(){
-  var upload = layui.upload;
-   
-  //执行实例
-  var uploadInst = upload.render({
-    elem: '#test1' //绑定元素
-    ,url: '/upload/' //上传接口
-    ,done: function(res){
-      //上传完毕回调
-    }
-    ,error: function(){
-      //请求异常回调
-    }
-  });
-});
-</script>
 
+<!-- 处理上传图片-->
+<script type="text/javascript">
+    layui.use('upload', function(){
+        var upload = layui.upload;
+        var tag_token = $(".tag_token").val();
+        //普通图片上传
+        var uploadInst = upload.render({
+            elem: '.btn_upload_img'
+            ,type : 'images'
+            ,exts: 'jpg|png|gif' //设置一些后缀，用于演示前端验证和后端的验证
+            //,auto:false //选择图片后是否直接上传
+            //,accept:'images' //上传文件类型
+            ,url: 'upload.php'
+            ,data:{'_token':tag_token}
+            ,before: function(obj){
+                //预读本地文件示例，不支持ie8
+                obj.preview(function(index, file, result){
+                    $('.img-upload-view').attr('src', result); //图片链接（base64）
+                });
+            }
+            ,done: function(res){
+                //如果上传失败
+                if(res.status != '0'){
+                    var pro_imagename=layer.msg(res.status);
+                    return layer.msg('上传成功');
+                }else{//上传成功
+                    layer.msg(res.message);
+                }
+            }
+            ,error: function(){
+                //演示失败状态，并实现重传
+                return layer.msg('上传失败,请重新上传');
+            }
+        });
+    });
+</script>
 
 
     <script>
@@ -127,7 +172,25 @@ layui.use('upload', function(){
           //监听提交
           form.on('submit(add)', function(data){
             console.log(data);
+            layer.alert(JSON.stringify(data.field), {
+            title: '最终的提交信息'
+            })
+            return false;
             //发异步，把数据提交给php
+            $.ajax({                 
+			url: 'post',                 
+			type: 'pro_add_intodb.php',                 
+			data: $(data.form).serialize(),                 
+			success: function(obj) {                     
+				if(obj.stat == 1) {
+                                    layer.msg("添加成功");                         
+				}else{
+                                    layer.msg("服务器忙请稍后再试");
+				}                    
+			}             
+		});  
+            return false;           
+
             layer.alert("增加成功", {icon: 6},function () {
                 // 获得frame索引
                 var index = parent.layer.getFrameIndex(window.name);
