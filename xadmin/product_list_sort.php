@@ -13,7 +13,7 @@ $sql = "SELECT `id`, `pro_name`, `pro_imagename`, `type`, `subtype`, `getratio`,
 $rows = fetchAll(connect(), $sql);
 
 if (!$rows) {
-    alertMessage("没有任何分类，请先添加！", "product_add.html");
+    alertMessage("没有任何产品，请先添加！", "product_add.html");
 }
 
 ?>
@@ -103,20 +103,20 @@ if (!$rows) {
                    <!-- <td><?= $row['status'] ?></td> -->
                    
                    <?php if ($row['status'] > "0"): ?>
-                       <td class="td-status"> <span class="layui-btn layui-btn-normal layui-btn-mini">已启用</span></td>
+                       <td class="td-status"> <span class="layui-btn layui-btn-normal layui-btn-mini">已审批</span></td>
                    <?php else: ?>
-                       <td class="td-status"> <span class="layui-btn layui-btn-disabled layui-btn-mini">未启用</span></td>
+                       <td class="td-status"> <span class="layui-btn layui-btn-disabled layui-btn-mini">未审批</span></td>
                    <?php endif; ?>
                    
                    <td class="td-manage">
 
                        <?php if ($row['status'] > "0"): ?>
                            
-                           <a onclick="member_stop(this)" pro_id = <?= $row['id'] ?> href="javascript:;"  title="停用">
+                           <a onclick="member_stop(this)" pro_id = <?= $row['id'] ?> href="javascript:;"  title="下架">
                                <i class="layui-icon">&#xe601;</i>
                            </a>
                        <?php else: ?>
-                           <a onclick="member_start(this)" pro_id = <?= $row['id'] ?> href="javascript:;"  title="启用">
+                           <a onclick="member_start(this)" pro_id = <?= $row['id'] ?> href="javascript:;"  title="审批">
                                <i class="layui-icon">&#xe601;</i>
                            </a>
                        <?php endif; ?>
@@ -168,13 +168,13 @@ if (!$rows) {
        /*用户-停用*/
 
       function member_start(obj,id){
-          layer.confirm('确认要启用吗？',function(index){
+          layer.confirm('确认要审批吗？',function(index){
 
-                $(obj).attr('title','停用')
+                $(obj).attr('title','下架')
                 $(obj).find('i').html('&#xe601;');
 
-                $(obj).parents("tr").find(".td-status").find('span').addClass('layui-btn-normal').html('已启用');
-                layer.msg('已启用!',{icon: 5,time:1000});
+                $(obj).parents("tr").find(".td-status").find('span').addClass('layui-btn-normal').html('已审批');
+                layer.msg('已审批!',{icon: 5,time:1000});
               
                 window.location = "active_pro_status.php?id=" + $(obj).attr('pro_id');
               
@@ -182,14 +182,14 @@ if (!$rows) {
       }
 
       function member_stop(obj,id){
-          layer.confirm('确认要停用吗？',function(index){
+          layer.confirm('确认要下架吗？',function(index){
 
                 //发异步把用户状态进行更改
-                $(obj).attr('title','启用')
+                $(obj).attr('title','审批')
                 $(obj).find('i').html('&#xe62f;');
 
-                $(obj).parents("tr").find(".td-status").find('span').addClass('layui-btn-disabled').html('已停用');
-                layer.msg('已停用!',{icon: 5,time:1000});
+                $(obj).parents("tr").find(".td-status").find('span').addClass('layui-btn-disabled').html('已下架');
+                layer.msg('已下架!',{icon: 5,time:1000});
 
                 window.location = "dactive_pro_status.php?id=" + $(obj).attr('pro_id');
 

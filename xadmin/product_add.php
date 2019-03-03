@@ -21,6 +21,7 @@ $db->query("SET NAMES UTF8");
 #编辑sql语句
 $sql = "insert into products values (null,\"$L_proname\",\"$L_imagename\",\"$L_protype\",\"$L_subtype\",\"$L_getratio\",\"$L_reward\",\"$L_comment\",\"0\")";
 
+#var_dump($sql);
  
 #执行sql 语句
 $result = $db->query($sql);
