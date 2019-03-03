@@ -13,7 +13,7 @@ $sql = "SELECT `id`, `pro_name`, `pro_imagename`, `type`, `subtype`, `getratio`,
 $rows = fetchAll(connect(), $sql);
 
 if (!$rows) {
-    alertMessage("没有任何分类，请先添加！", "addCate.php");
+    alertMessage("没有任何分类，请先添加！", "product_add.html");
 }
 
 ?>
@@ -25,7 +25,7 @@ if (!$rows) {
   
   <head>
     <meta charset="UTF-8">
-    <title>欢迎页面-X-admin2.0</title>
+    <title>景源后台管理</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
@@ -121,13 +121,10 @@ if (!$rows) {
                            </a>
                        <?php endif; ?>
 
-                       <a title="编辑"  onclick="x_admin_show('编辑','member-edit.html',600,400)" href="javascript:;">
-                           <i class="layui-icon">&#xe642;</i>
-                       </a>
-                       <a onclick="x_admin_show('修改密码','member-password.html',600,400)" title="修改密码" href="javascript:;">
+                       <a onclick="x_admin_show('修改产品','member-password.html',600,400)" title="修改产品" href="javascript:;">
                            <i class="layui-icon">&#xe631;</i>
                        </a>
-                       <a title="删除" onclick="member_del(this,'要删除的id')" href="javascript:;">
+                       <a title="删除" onclick="product_del(this)" pro_id = <?= $row['id'] ?> href="javascript:;">
                            <i class="layui-icon">&#xe640;</i>
                        </a>
                    </td>
@@ -201,9 +198,10 @@ if (!$rows) {
       }
 
       /*用户-删除*/
-      function member_del(obj,id){
+      function product_del(obj,id){
           layer.confirm('确认要删除吗？',function(index){
               //发异步删除数据
+              window.location = "product_del.php?id=" + $(obj).attr('pro_id');
               $(obj).parents("tr").remove();
               layer.msg('已删除!',{icon:1,time:1000});
           });
