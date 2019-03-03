@@ -9,7 +9,7 @@ if ($page < 1 || $page == null || !is_numeric($page)) {
     $page = 1;
 }
 $offset = ($page - 1) * $pageSize;
-$sql = "SELECT `id`, `pro_name`, `pro_image_id`, `type`, `subtype`, `getratio`, `reward`, `comment`, `status` FROM `products` ORDER BY `id` LIMIT {$offset},{$pageSize}";
+$sql = "SELECT `id`, `pro_name`, `pro_imagename`, `type`, `subtype`, `getratio`, `reward`, `comment`, `status` FROM `products` ORDER BY `id` LIMIT {$offset},{$pageSize}";
 $rows = fetchAll(connect(), $sql);
 
 if (!$rows) {
@@ -64,7 +64,7 @@ if (!$rows) {
       </div>
       <xblock>
         <button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button>
-        <button class="layui-btn" onclick="x_admin_show('添加用户','./product_add.php',600,400)"><i class="layui-icon"></i>添加产品</button>
+        <button class="layui-btn" onclick="x_admin_show('添加用户','./product_add.html',600,400)"><i class="layui-icon"></i>添加产品</button>
         <span class="x-right" style="line-height:40px">共有数据：88 条</span>
       </xblock>
       <table class="layui-table">
@@ -75,7 +75,7 @@ if (!$rows) {
             </th>
             <th>ID</th>
             <th>产品名</th>
-            <th>图片id</th>
+            <th>图片</th>
             <th>大类</th>
             <th>第二大类</th>
             <th>返点比例</th>
@@ -86,6 +86,7 @@ if (!$rows) {
           </tr>
         </thead>
         <tbody>
+
             <?php foreach ($rows as $row): ?>
                <tr>
                    <td>
@@ -93,7 +94,7 @@ if (!$rows) {
                    </td>
                    <td><?= $row['id'] ?></td>
                    <td><?= $row['pro_name'] ?></td>
-                   <td><?= $row['pro_image_id'] ?></td>
+                   <td><?= $row['pro_imagename'] ?></td>
                    <td><?= $row['type'] ?></td>
                    <td><?= $row['subtype'] ?></td>
                    <td><?= $row['getratio'] ?></td>

@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html>
-
+  
   <head>
     <meta charset="UTF-8">
-    <title>添加产品</title>
+    <title>欢迎页面-X-admin2.0</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./css/font.css">
     <link rel="stylesheet" href="./css/xadmin.css">
     <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="./lib/layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../libs/layui/src/css/layui.css" charset="utf-8"></script>
     <script type="text/javascript" src="./js/xadmin.js"></script>
     <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
     <!--[if lt IE 9]>
       <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
       <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="../frame/static/image/code.png">
   </head>
 
 
@@ -40,15 +42,12 @@
         border: 4px solid #44576B;
     }
 </style>
+  
+  <body>
+    <div class="x-body layui-anim layui-anim-up">
+        <form class="layui-form">
 
-<body>
-
- 
-<div class="x-body layui-anim layui-anim-up">
- 
-    <!-- 表单选项 -->
-    <form class="layui-form">
-        <div class="layui-form-item">
+          <div class="layui-form-item">
               <label for="L_proname" class="layui-form-label">
                   <span class="x-red">*</span>产品名称
               </label>
@@ -56,8 +55,8 @@
                   <input type="text" id="L_proname" name="proname" required="" lay-verify="proname"
                   autocomplete="off" class="layui-input">
               </div>
-        </div>
-        <div class="layui-form-item">
+          </div>
+          <div class="layui-form-item">
               <label for="L_protype" class="layui-form-label">
                   <span class="x-red">*</span>产品类型
               </label>
@@ -102,13 +101,13 @@
                   <p id="demoText"></p>
               </div>
           </div>
+
           <div class="layui-form-item layui-form-text">
               <label class="layui-form-label">产品描述</label>
                   <div class="layui-input-block">
                       <textarea id = "L_comment" placeholder="既然选择了远方，便只顾风雨兼程；路漫漫其修远兮，吾将上下而求索" value="" class="layui-textarea"></textarea>
                   </div>
           </div>
-
           <div class="layui-form-item">
               <label for="L_repass" class="layui-form-label">
               </label>
@@ -116,13 +115,12 @@
                   增加
               </button>
           </div>
+      </form>
+    </div>
 
-    </form>
-</div>
 
-<!-- 处理上传图片 -->
+<!-- 处理上传图片-->
 <script type="text/javascript">
-    var pro_imagename;
     layui.use('upload', function(){
         var upload = layui.upload;
         var tag_token = $(".tag_token").val();
@@ -144,7 +142,7 @@
             ,done: function(res){
                 //如果上传失败
                 if(res.status != '0'){
-                    pro_imagename=res.status;
+                    var pro_imagename=layer.msg(res.status);
                     return layer.msg('上传成功');
                 }else{//上传成功
                     layer.msg(res.message);
@@ -156,53 +154,72 @@
             }
         });
     });
+</script>
 
+<script src="../../layui/src/layui.js"></script>
+<script type="text/javascript">
 
-    layui.use(['form','jquery','layer'], function () {
-        var form   = layui.form;
-        var $      = layui.jquery;
-        var layer  = layui.layer;
-        //添加表单失焦事件
- 
-        //
-        //添加表单监听事件,提交注册信息
-        form.on('submit(add)', function() {
+        layui.use(['form','jquery','layer'], function(){
+            $ = layui.jquery;
+          var form = layui.form
+          ,layer = layui.layer;
+        
+          //自定义验证规则
+          form.verify({
+            proname: function(value){
+              if(value.length > 10){
+                return '产品名称必须小于十个字符';
+              }
+            }
+          });
+
+          //监听提交
+          form.on('submit(add)', function() {
             $.ajax({
-                url:'product_add.php',
+                url:'reg.php',
                 type:'post',
                 dataType:'text',
                 data:{
+                    user:$('#user').val(),
                     L_proname:$('#L_proname').val(),
                     L_protype:$('#L_protype').val(),
                     L_subtype:$('#L_subtype').val(),
                     L_getratio:$('#L_getratio').val(),
                     L_reward:$('#L_reward').val(),
-                    L_imagename:pro_imagename,
+                  //  pro_imagename:pro_imagename,
                     L_comment:$('#L_comment').val(),
                 },
                 success:function(data){
                     if (data == 1) {
-                        layer.alert("增加成功", {icon: 6},function () {
-                            // 获得frame索引
-                            var index = parent.layer.getFrameIndex(window.name);
-                            //关闭当前frame
-                            parent.layer.close(index);
-                        });
-
-
+                        layer.msg('注册成功');
+                        ///location.href = "login.html";
                     }else {
-                        layer.msg('添加失败');
+                        layer.msg('注册失败');
                     }
                 }
             })
             //防止页面跳转
             return false;
         });
- 
-    });
-</script> 
 
-</body>
+          layer.alert("增加成功", {icon: 6},function () {
+                // 获得frame索引
+                var index = parent.layer.getFrameIndex(window.name);
+                //关闭当前frame
+                parent.layer.close(index);
+            });
+            return false;
+          });
+          
+          
+        });
+    </script>
+    <script>var _hmt = _hmt || []; (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();</script>
+  </body>
+
 </html>
-
-

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
-
+  
   <head>
     <meta charset="UTF-8">
-    <title>添加产品</title>
+    <title>欢迎页面-X-admin2.0</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
@@ -40,15 +40,11 @@
         border: 4px solid #44576B;
     }
 </style>
-
-<body>
-
- 
-<div class="x-body layui-anim layui-anim-up">
- 
-    <!-- 表单选项 -->
-    <form class="layui-form">
-        <div class="layui-form-item">
+  
+  <body>
+    <div class="x-body layui-anim layui-anim-up">
+        <form class="layui-form">
+          <div class="layui-form-item">
               <label for="L_proname" class="layui-form-label">
                   <span class="x-red">*</span>产品名称
               </label>
@@ -56,8 +52,8 @@
                   <input type="text" id="L_proname" name="proname" required="" lay-verify="proname"
                   autocomplete="off" class="layui-input">
               </div>
-        </div>
-        <div class="layui-form-item">
+          </div>
+          <div class="layui-form-item">
               <label for="L_protype" class="layui-form-label">
                   <span class="x-red">*</span>产品类型
               </label>
@@ -102,13 +98,13 @@
                   <p id="demoText"></p>
               </div>
           </div>
+
           <div class="layui-form-item layui-form-text">
               <label class="layui-form-label">产品描述</label>
                   <div class="layui-input-block">
-                      <textarea id = "L_comment" placeholder="既然选择了远方，便只顾风雨兼程；路漫漫其修远兮，吾将上下而求索" value="" class="layui-textarea"></textarea>
+                      <textarea placeholder="既然选择了远方，便只顾风雨兼程；路漫漫其修远兮，吾将上下而求索" value="" class="layui-textarea"></textarea>
                   </div>
           </div>
-
           <div class="layui-form-item">
               <label for="L_repass" class="layui-form-label">
               </label>
@@ -116,13 +112,12 @@
                   增加
               </button>
           </div>
+      </form>
+    </div>
 
-    </form>
-</div>
 
 <!-- 处理上传图片 -->
 <script type="text/javascript">
-    var pro_imagename;
     layui.use('upload', function(){
         var upload = layui.upload;
         var tag_token = $(".tag_token").val();
@@ -144,7 +139,7 @@
             ,done: function(res){
                 //如果上传失败
                 if(res.status != '0'){
-                    pro_imagename=res.status;
+                    var pro_imagename=layer.msg(res.status);
                     return layer.msg('上传成功');
                 }else{//上传成功
                     layer.msg(res.message);
@@ -156,53 +151,66 @@
             }
         });
     });
+</script>
 
 
-    layui.use(['form','jquery','layer'], function () {
-        var form   = layui.form;
-        var $      = layui.jquery;
-        var layer  = layui.layer;
-        //添加表单失焦事件
- 
-        //
-        //添加表单监听事件,提交注册信息
-        form.on('submit(add)', function() {
-            $.ajax({
-                url:'product_add.php',
-                type:'post',
-                dataType:'text',
-                data:{
-                    L_proname:$('#L_proname').val(),
-                    L_protype:$('#L_protype').val(),
-                    L_subtype:$('#L_subtype').val(),
-                    L_getratio:$('#L_getratio').val(),
-                    L_reward:$('#L_reward').val(),
-                    L_imagename:pro_imagename,
-                    L_comment:$('#L_comment').val(),
-                },
-                success:function(data){
-                    if (data == 1) {
-                        layer.alert("增加成功", {icon: 6},function () {
-                            // 获得frame索引
-                            var index = parent.layer.getFrameIndex(window.name);
-                            //关闭当前frame
-                            parent.layer.close(index);
-                        });
+<!--    <script>
+        layui.use(['form','layer'], function(){
+            $ = layui.jquery;
+          var form = layui.form
+          ,layer = layui.layer;
+        
+          //自定义验证规则
+          form.verify({
+            proname: function(value){
+              if(value.length > 10){
+                return '产品名称必须小于十个字符';
+              }
+            }
+          });
 
-
-                    }else {
-                        layer.msg('添加失败');
-                    }
-                }
+          //监听提交
+          form.on('submit(add)', function(data){
+            console.log(data);
+            layer.alert(JSON.stringify(data.field), {
+            title: '最终的提交信息'
             })
-            //防止页面跳转
             return false;
+            //发异步，把数据提交给php
+            $.ajax({                 
+			url: 'post',                 
+			type: 'pro_add_intodb.php',                 
+			data: $(data.form).serialize(),                 
+			success: function(obj) {                     
+				if(obj.stat == 1) {
+                                    layer.msg("添加成功");                         
+				}else{
+                                    layer.msg("服务器忙请稍后再试");
+				}                    
+			}             
+		});  
+            return false;           
+
+            layer.alert("增加成功", {icon: 6},function () {
+                // 获得frame索引
+                var index = parent.layer.getFrameIndex(window.name);
+                //关闭当前frame
+                parent.layer.close(index);
+            });
+            return false;
+          });
+          
+          
         });
- 
-    });
-</script> 
+    </script>
+    <script>var _hmt = _hmt || []; (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();</script>
+-->
+  </body>
 
-</body>
 </html>
-
 
