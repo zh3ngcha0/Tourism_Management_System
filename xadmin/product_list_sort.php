@@ -13,7 +13,8 @@ $sql = "SELECT `id`, `pro_name`, `pro_imagename`, `type`, `subtype`, `getratio`,
 $rows = fetchAll(connect(), $sql);
 
 if (!$rows) {
-    alertMessage("没有任何产品，请先添加！", "product_add.html");
+    #alertMessage("没有任何产品，请先添加！", "product_add.html");
+    echo "<script>alert('没有任何产品，请先添加')</script>";
 }
 
 ?>
@@ -90,7 +91,7 @@ if (!$rows) {
             <?php foreach ($rows as $row): ?>
                <tr>
                    <td>
-                       <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='2'><i class="layui-icon">&#xe605;</i></div>
+                       <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id=<?= $row['id'] ?>><i class="layui-icon">&#xe605;</i></div>
                    </td>
                    <td><?= $row['id'] ?></td>
                    <td><?= $row['pro_name'] ?></td>
@@ -215,6 +216,7 @@ if (!$rows) {
   
         layer.confirm('确认要删除吗？'+data,function(index){
             //捉到所有被选中的，发异步进行删除
+            window.location = "product_multidel.php?id=" + data;
             layer.msg('删除成功', {icon: 1});
             $(".layui-form-checked").not('.header').parents('tr').remove();
         });
