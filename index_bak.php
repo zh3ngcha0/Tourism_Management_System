@@ -27,6 +27,13 @@ include('includes/config.php');
 		 new WOW().init();
 	</script>
 <!--//end-animate-->
+<style>
+        *{margin:0;padding:0;}
+        #leftMenu ul{width:100px;position:absolute;background:#DADADA;list-style:none;}
+        #leftMenu li{width:100px;position: relative;}
+        #leftMenu li>ul{left: 100px;top: 0;display: none;}
+        #leftMenu li:hover>ul{display: block;}
+</style>
 
 </head>
 <body>
@@ -36,6 +43,49 @@ include('includes/config.php');
 		<h1 class="wow zoomIn animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: zoomIn;"> 贵州景源旅行社管理系统</h1>
 	</div>
 </div>
+
+
+<!--- rupes ---->
+<div class="container">
+	<div class="rupes">
+		<div class="col-md-4 rupes-left wow fadeInDown animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInDown;">
+			<div class="rup-left">
+				<a href="offers.html"><i class="fa fa-usd"></i></a>
+			</div>
+			<div class="rup-rgt">
+				<h3>省钱 20%</h3>
+				<h4><a href="offers.html">智能旅行</a></h4>
+				
+			</div>
+				<div class="clearfix"></div>
+		</div>
+		<div class="col-md-4 rupes-left wow fadeInDown animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInDown;">
+			<div class="rup-left">
+				<a href="offers.html"><i class="fa fa-h-square"></i></a>
+			</div>
+			<div class="rup-rgt">
+				<h3>最多省 70%</h3>
+				<h4><a href="offers.html">全球酒店预订</a></h4>
+				
+			</div>
+				<div class="clearfix"></div>
+		</div>
+		<div class="col-md-4 rupes-left wow fadeInDown animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInDown;">
+			<div class="rup-left">
+				<a href="offers.html"><i class="fa fa-mobile"></i></a>
+			</div>
+			<div class="rup-rgt">
+				<h3>手机环游世界</h3>
+				<h4><a href="offers.html">APP 下载</a></h4>
+			
+			</div>
+				<div class="clearfix"></div>
+		</div>
+	
+	</div>
+</div>
+<!--- /rupes ---->
+
 
 
 
@@ -50,7 +100,7 @@ include('includes/config.php');
 	<h3>套餐列表</h3>
 
 					
-<?php $sql = "SELECT * from products order by rand() limit 4";
+<?php $sql = "SELECT * from tbltourpackages order by rand() limit 4";
 $query = $dbh->prepare($sql);
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
@@ -61,23 +111,28 @@ foreach($results as $result)
 {	?>
 			<div class="rom-btm">
 				<div class="col-md-3 room-left wow fadeInLeft animated" data-wow-delay=".5s">
-					<img src="./xadmin/upload/<?php echo htmlentities($result->pro_imagename);?>" class="img-responsive" alt="">
+					<img src="admin/pacakgeimages/<?php echo htmlentities($result->PackageImage);?>" class="img-responsive" alt="">
 				</div>
 				<div class="col-md-6 room-midle wow fadeInUp animated" data-wow-delay=".5s">
-					<h4>产品名称: <?php echo htmlentities($result->pro_name);?></h4>
-					<h6>产品类型 : <?php echo htmlentities($result->type);?></h6>
-					<p><b>产品二级类型:</b> <?php echo htmlentities($result->subtype);?></p>
-                                        <p><b>价格:</b> <?php echo htmlentities($result->reward);?></p>
-					<p><b>产品介绍</b> <?php echo htmlentities($result->comment);?></p>
+					<h4>套餐名称: <?php echo htmlentities($result->PackageName);?></h4>
+					<h6>套餐类型 : <?php echo htmlentities($result->PackageType);?></h6>
+					<p><b>套餐位置 :</b> <?php echo htmlentities($result->PackageLocation);?></p>
+					<p><b>套餐介绍</b> <?php echo htmlentities($result->PackageFetures);?></p>
 				</div>
 				<div class="col-md-3 room-right wow fadeInRight animated" data-wow-delay=".5s">
 					<h5>USD <?php echo htmlentities($result->PackagePrice);?></h5>
-					<a href="package-details.php?pkgid=<?php echo htmlentities($result->PackageId);?>" class="view">预定</a>
+					<a href="package-details.php?pkgid=<?php echo htmlentities($result->PackageId);?>" class="view">点击查看</a>
 				</div>
 				<div class="clearfix"></div>
 			</div>
 
 <?php }} ?>
+			
+		
+<div><a href="package-list.php" class="view"> 查看更多套餐</a></div>
+</div>
+			<div class="clearfix"></div>
+	</div>
 
 
 
