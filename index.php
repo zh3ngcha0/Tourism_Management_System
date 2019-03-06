@@ -30,19 +30,12 @@ document.oncontextmenu=stops;
         <div class="fl">
             <ul class="clear">
                 <li class="fl navbar-nav" style="padding: 0"><a href="javascript:">贵州景源旅游</a> <span>|</span></li>
-                <li class="fl navbar-nav"><a href="javascript:">服务</a><span>|</span></li>
+                <li class="fl navbar-nav"><a href="javascript:">用户注册</a><span>|</span></li>
+                <li class="fl navbar-nav"><a href="javascript:">用户户登录</a><span>|</span></li>
+                <li class="fl navbar-nav"><a href="javascript:">供销商注册</a><span>|</span></li>
+                <li class="fl navbar-nav"><a href="javascript:">供销商登录</a><span>|</span></li>
+                <li class="fl navbar-nav"><a href="javascript:">管理员登录</a><span>|</span></li>
             </ul>
-        </div>
-        <div class="fr">
-            <a href="javascript:" class="register">用户注册</a>
-            <span>|</span>
-            <a href="javascript:" class="login">用户登录</a>
-            <span>|</span>
-            <a href="javascript:" class="register">供销商注册</a>
-            <span>|</span>
-            <a href="javascript:" class="login">供销商登录</a>
-            <span>|</span>
-            <a href="javascript:" class="login">管理员登录</a>
         </div>
     </div>
 </div>
@@ -69,11 +62,11 @@ document.oncontextmenu=stops;
 <div class="container">
     <div class="slider ">
         <ul class='slider-main'>
-            <li><a href="javascript:"><img src="img/slider/1.jpg" alt=""/></a></li>
-            <li><a href="javascript:"><img src="img/slider/2.png" alt=""/></a></li>
-            <li><a href="javascript:"><img src="img/slider/3.png" alt=""/></a></li>
-            <li><a href="javascript:"><img src="img/slider/4.png" alt=""/></a></li>
-            <li><a href="javascript:"><img src="img/slider/1.jpg" alt=""/></a></li>
+            <li><a href="javascript:"><img src="img/slider/5.jpg" alt=""/></a></li>
+            <li><a href="javascript:"><img src="img/slider/6.jpg" alt=""/></a></li>
+            <li><a href="javascript:"><img src="img/slider/7.jpg" alt=""/></a></li>
+            <li><a href="javascript:"><img src="img/slider/8.jpg" alt=""/></a></li>
+            <li><a href="javascript:"><img src="img/slider/9.jpg" alt=""/></a></li>
         </ul>
         <ul class='index'>
             <li class='active'></li>
@@ -183,7 +176,7 @@ document.oncontextmenu=stops;
         </div>
         <div class="xm-carousel-wrapper" style="height: 340px; overflow:hidden;">
             <ul class="main-banner" style="left:0">
-                <?php $sql = "SELECT * from products order by rand() limit 5";
+                <?php $sql = "SELECT * from products limit 0,5";
                     $query = $dbh->prepare($sql);
                     $query->execute();
                     $results=$query->fetchAll(PDO::FETCH_OBJ);
@@ -204,41 +197,25 @@ document.oncontextmenu=stops;
                        <?php }} ?>
             </ul>
             <ul class="main-banner">
-                <li class="rainbow-item-6">
-                    <a class="thumb" href="javascript:">
-                        <img src="img/p2.png" alt="推荐路线">
-                    </a>
-                    <h3><a href="javascript:">随便</a></h3>
-                    <p class="desc">随便</p>
-                    <p class="price">4299元起</p>
-                </li>
-                <li class="rainbow-item-7">
-                    <a class="thumb" href="javascript:"><img src="img/p2.png"
-                                                             alt="推荐路线"></a>
-                    <h3><a href="javascript:">随便</a></h3>
-                    <p class="desc">随便</p>
-                    <p class="price">1299元起</p>
-                </li>
-                <li class="rainbow-item-8">
-                    <a class="thumb" href="javascript:"><img src="img/p2.png"
-                                                             alt="推荐路线"></a>
-                    <h3><a href="javascript:">随便</a></h3>
-                    <p class="desc">随便</p>
-                    <p class="price">1299元起</p>
-                </li>
-                <li class="rainbow-item-9">
-                    <a class="thumb" href="javascript:"><img src="img/p2.png"
-                                                             alt="推荐路线"></a>
-                    <h3><a href="javascript:">随便</a></h3>
-                    <p class="desc">随便</p>
-                    <p class="price">1299元起</p>
-                </li>
-                <li class="rainbow-item-10">
-                    <a class="thumb" href="javascript:"><img src="img/p2.png" alt="推荐路线"></a>
-                    <h3><a href="javascript:">随便</a></h3>
-                    <p class="desc">随便</p>
-                    <p class="price">1299元起</p>
-                </li>
+                <?php $sql = "SELECT * from products limit 5,10";
+                    $query = $dbh->prepare($sql);
+                    $query->execute();
+                    $results=$query->fetchAll(PDO::FETCH_OBJ);
+                    $cnt=1;
+                    if($query->rowCount() > 0)
+                    {
+                        foreach($results as $result)
+                        {       ?>
+                            <li class="rainbow-item-1">
+                                <a class="thumb" href="javascript:">
+                                    <img src="./xadmin/upload/<?php echo htmlentities($result->pro_imagename);?>" alt="推荐线路">
+                                </a>
+                                <h3><a href="javascript:"><?php echo htmlentities($result->pro_name);?></a></h3>
+                                <p class="desc"><?php echo htmlentities($result->comment);?></p>
+                                <p class="price"><?php echo htmlentities($result->reward);?>元起</p>
+                            </li>
+
+                       <?php }} ?>
             </ul>
         </div>
     </div>
