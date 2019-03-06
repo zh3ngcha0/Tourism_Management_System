@@ -69,11 +69,11 @@ document.oncontextmenu=stops;
 <div class="container">
     <div class="slider ">
         <ul class='slider-main'>
-            <li><a href="javascript:"><img src="img/slider/1.png" alt=""/></a></li>
+            <li><a href="javascript:"><img src="img/slider/1.jpg" alt=""/></a></li>
             <li><a href="javascript:"><img src="img/slider/2.png" alt=""/></a></li>
             <li><a href="javascript:"><img src="img/slider/3.png" alt=""/></a></li>
             <li><a href="javascript:"><img src="img/slider/4.png" alt=""/></a></li>
-            <li><a href="javascript:"><img src="img/slider/1.png" alt=""/></a></li>
+            <li><a href="javascript:"><img src="img/slider/1.jpg" alt=""/></a></li>
         </ul>
         <ul class='index'>
             <li class='active'></li>
