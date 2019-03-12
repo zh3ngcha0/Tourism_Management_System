@@ -108,12 +108,6 @@
                       <textarea id = "L_comment" placeholder="产品描述信息" value="" class="layui-textarea"></textarea>
                   </div>
           </div>
-          <div class="layui-form-item layui-form-text">
-              <label class="layui-form-label">行程</label>
-                  <div class="layui-input-block">
-                      <textarea id = "L_trip" placeholder="详细行程" value="" class="layui-textarea"></textarea>
-                  </div>
-          </div>
 
           <div class="layui-form-item">
               <label for="L_repass" class="layui-form-label">
@@ -185,7 +179,6 @@
                     L_reward:$('#L_reward').val(),
                     L_imagename:pro_imagename,
                     L_comment:$('#L_comment').val(),
-                    L_trip:$('#L_trip').val(),
                 },
                 success:function(data){
                     if (data == 1) {

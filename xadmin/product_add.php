@@ -9,7 +9,7 @@ $L_subtype = $_POST['L_subtype'];
 $L_getratio = $_POST['L_getratio'];
 $L_reward = $_POST['L_reward'];
 $L_comment = $_POST['L_comment'];
-
+$L_trip = $_POST['L_trip'];
 
  
 #连接数据库
@@ -19,7 +19,7 @@ $db = new mysqli('localhost','root','toor','tms');
 $db->query("SET NAMES UTF8");
  
 #编辑sql语句
-$sql = "insert into products values (null,\"$L_proname\",\"$L_imagename\",\"$L_protype\",\"$L_subtype\",\"$L_getratio\",\"$L_reward\",\"$L_comment\",\"0\")";
+$sql = "insert into products values (null,\"$L_proname\",\"$L_imagename\",\"$L_protype\",\"$L_subtype\",\"$L_getratio\",\"$L_reward\",\"$L_comment\",\"0\", \"$L_trip\")";
 
 #var_dump($sql);
  

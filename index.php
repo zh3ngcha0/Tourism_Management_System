@@ -16,6 +16,8 @@ include('includes/config.php');
     <meta name="Copyright" content="js代码" />
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="./libs/layui/src/css/layui.css">    
+    <script type="text/javascript" src="./libs/layui/src/layui.js" charset="utf-8"></script>
     <script type="text/javascript">
 function stops(){
    return false;
@@ -30,11 +32,13 @@ document.oncontextmenu=stops;
         <div class="fl">
             <ul class="clear">
                 <li class="fl navbar-nav" style="padding: 0"><a href="javascript:">贵州景源旅游</a> <span>|</span></li>
-                <li class="fl navbar-nav"><a href="javascript:">用户注册</a><span>|</span></li>
-                <li class="fl navbar-nav"><a href="javascript:">用户户登录</a><span>|</span></li>
+                <li class="fl navbar-nav"><a href="user_login/register.html">用户注册</a><span>|</span></li>
+                <li class="fl navbar-nav"><a href="user_login/login.html">用户登录</a><span>|</span></li>
                 <li class="fl navbar-nav"><a href="javascript:">供销商注册</a><span>|</span></li>
                 <li class="fl navbar-nav"><a href="javascript:">供销商登录</a><span>|</span></li>
-                <li class="fl navbar-nav"><a href="javascript:">管理员登录</a><span>|</span></li>
+                <li class="fl navbar-nav"><a href="xadmin/login.php">管理员登录</a><span>|</span></li>
+                <li class="fl navbar-nav"><a href="javascript:">当前用户 <?php echo $_SESSION['user'] ?> </a><span>|</span></li>
+                <li class="fl navbar-nav"><a href="./user_login/logout.php">退出</a><span>|</span></li>
             </ul>
         </div>
     </div>
@@ -192,6 +196,7 @@ document.oncontextmenu=stops;
                                 <h3><a href="javascript:"><?php echo htmlentities($result->pro_name);?></a></h3>
                                 <p class="desc"><?php echo htmlentities($result->comment);?></p>
                                 <p class="price"><?php echo htmlentities($result->reward);?>元起</p>
+                                <button onclick="product_book(this)" pro_id = <?php echo htmlentities($result->id);?>  href="javascript:;" class="layui-btn">点击预定</button>
                             </li>
 
                        <?php }} ?>
@@ -765,5 +770,56 @@ document.oncontextmenu=stops;
 </div>
 <script src="js/jquery-1.11.3.js"></script>
 <script src="js/index.js"></script>
+
+
+<script>
+      layui.use('layer', function(){
+          var layer = layui.layer;
+      }); 
+
+
+      function product_book(obj,id){
+                 
+                window.location = "product_buy.php?id=" + $(obj).attr('pro_id');
+
+              
+      }
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>
