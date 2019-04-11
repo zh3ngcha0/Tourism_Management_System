@@ -39,7 +39,7 @@ $sql = "SELECT * FROM products "." where id = ".$id;
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">	
 	<meta name="apple-mobile-web-app-capable" content="yes">	
 	<meta name="format-detection" content="telephone=no">	
-	<link rel="stylesheet" type="text/css" href="./libs/layui/src/css/layui.css" media="all">
+	<link rel="stylesheet" type="text/css" href="common/layui/css/layui.css" media="all">
 	<link rel="stylesheet" type="text/css" href="common/bootstrap/css/bootstrap.css" media="all">
 	<link rel="stylesheet" type="text/css" href="common/global.css" media="all">
 	<link rel="stylesheet" type="text/css" href="css/personal.css" media="all">
@@ -50,8 +50,6 @@ $sql = "SELECT * FROM products "." where id = ".$id;
 </head>
 <body>
 
-<hr class="layui-bg-blue">
-<hr class="layui-bg-black">
 
 <section class="layui-larry-box">
 	<div class="larry-personal">
@@ -61,6 +59,7 @@ $sql = "SELECT * FROM products "." where id = ".$id;
 		<div class="larry-personal-body clearfix">
 			<form class="layui-form col-lg-5" action="" method="post">
 				<div class="layui-form-item">
+                                    <div class="rom-btm">
                                         <div class="col-md-3 room-left wow fadeInLeft animated" data-wow-delay=".5s">
                                             <img src="./xadmin/upload/<?php echo htmlentities($result->pro_imagename);?>" class="img-responsive" alt="">
                                         </div>
@@ -72,6 +71,8 @@ $sql = "SELECT * FROM products "." where id = ".$id;
                                             <p><b>产品介绍</b> <?php echo htmlentities($result->comment);?></p>
                                             <p><b>行程</b> <?php echo htmlentities($result->trip);?></p>
                                         </div>
+                                       <div class="clearfix"></div>
+                                       </div>
 
                                     </div>
                                 <div class="layui-form-item">
@@ -85,14 +86,13 @@ $sql = "SELECT * FROM products "." where id = ".$id;
                                 </div>
                                 <div class="layui-form-item">
                                     <div class="layui-row">
-                                        <form class="layui-form layui-col-md12 x-so">
-                                           <input class="layui-input" placeholder="开始日" name="start" id="start">
-                                           <input class="layui-input" placeholder="截止日" name="end" id="end">
-                                        </form>
-                                     </div>
+        <form class="layui-form layui-col-md12 x-so">
+          <input class="layui-input" placeholder="开始日" name="start" id="start">
+          <input class="layui-input" placeholder="截止日" name="end" id="end">
+        </form>
+      </div>
                                 </div>
                                  
-                                <hr class="layui-bg-blue">
 				<div class="layui-form-item">
 					<div class="layui-input-block">
 						<button onclick="member_stop(this)" pro_id = <?= $row['id'] ?> href="javascript:;" 

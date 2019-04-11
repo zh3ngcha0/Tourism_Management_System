@@ -780,7 +780,7 @@ document.oncontextmenu=stops;
 
       function product_book(obj,id){
                  
-                window.location = "product_buy.php?id=" + $(obj).attr('pro_id');
+                window.location = "product_details.php?id=" + $(obj).attr('pro_id');
 
               
       }
